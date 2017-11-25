@@ -32,7 +32,7 @@ catch {
 }
 
 #Get all ARM resources from all resource groups
-$ResourceGroups = Get-AzureRmResourceGroup 
+$ResourceGroups = Get-AzureRmVM
 
 foreach ($ResourceGroup in $ResourceGroups)
 {    
