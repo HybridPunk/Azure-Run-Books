@@ -32,15 +32,9 @@ catch {
 }
 
 #Get all ARM resources from all resource groups
-$ResourceGroups = Get-AzureRmVM
+$VMs = Get-AzureRmVM
 
-foreach ($ResourceGroup in $ResourceGroups)
+foreach ($VM in $VMs)
 {    
-    Write-Output ("Showing resources in resource group " + $ResourceGroup.ResourceGroupName)
-    $Resources = Find-AzureRmResource -ResourceGroupNameContains $ResourceGroup.ResourceGroupName | Select ResourceName, ResourceType
-    ForEach ($Resource in $Resources)
-    {
-        Write-Output ($Resource.ResourceName + " of type " +  $Resource.ResourceType)
-    }
-    Write-Output ("")
+    Get-AzureRmVM    
 } 
